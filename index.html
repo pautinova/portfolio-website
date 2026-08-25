@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1); mix-blend-mode:normal;">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;">VIEW CASE STUDY &rarr;</span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1);">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 20px;">
+    
+
+    <h1 style="margin:0; font-weight:300; font-style:italic; font-family:'Noto Serif',serif; font-size:clamp(26px,4.2vw,40px); line-height:1.35; letter-spacing:-0.01em; background:linear-gradient(to right, #00000080, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">
+      <span style="color: #a3a3a3; -webkit-text-fill-color: #a3a3a3; position: relative; font-weight: 300"><span style="font-style: normal; color: inherit; -webkit-text-fill-color: inherit">tinay</span></span>
+      <span style="color: inherit">[teen-eye]</span>
+      <span style="color: inherit; font-weight: 200"><span style="font-style: normal; font-weight: 300">is a</span></span>
+      <span style="color:inherit;">marketing generalist</span>
+      <span style="color:#8a8a8a;"><span style="font-style: normal;">❇</span></span>
+      <span style="color: inherit; font-weight: 100"><span style="font-style: normal; font-weight: 300; color: inherit">she crafts the copy</span></span>
+      <span style="color: #8a8a8a; font-style: normal">✧</span>
+      <span style="color:inherit;"><span style="font-style: normal;">designs the asset</span></span>
+      <span style="color:#8a8a8a;"><span style="font-style: normal;">✴</span></span>
+      <span style="color:inherit;"><span style="font-style: normal; color: inherit">runs the campaign</span></span>
+      <span style="color: #8a8a8a; font-style: normal">❋</span>
+      <span style="color:inherit;"><span style="font-style: normal;">measures what worked</span></span>
+      <span style="color:#8a8a8a;"><span style="font-style: normal;">✽</span></span>
+    </h1><div style="margin-top:36px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.15); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+      <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; color:#6b6b6b;">CURRENTLY LOOKING FOR MY NEXT OPPORTUNITY</span>
+      <a href="#work" style="font-size:10px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">FEATURED WORK ↓</a>
+    </div>
+  </header>
+
+  <main id="work" style="max-width:900px; margin:0 auto; padding:clamp(60px,10vw,100px) clamp(20px,4vw,48px) 0; display:flex; flex-direction:column; gap:14px; position:relative; z-index:1;">
+
+    <section style="background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: clamp(20.6px,3.1vw,33px) clamp(28px,4.2vw,44px) clamp(20.6px,3.1vw,33px) clamp(20.6px,3.1vw,33px); display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; padding-bottom: clamp(20.6px,3.1vw,33px); transition:border-color 0.2s ease; will-change:border-color; transform:translateZ(0); position:relative" style-hover="border-color:rgba(0,0,0,0.4);">
+      <a href="./BC-Ministry.dc.html" data-cursor-cta="1" aria-label="View project" style="position:absolute; inset:0; z-index:3; border-radius:16px;"></a>
+      <div style="flex:1 1 220px; max-width:280px;">
+        <h2 style="margin: 0 0 10px; font-family: 'Noto Serif',serif; font-weight: 300; font-size: 22px; color: #111111; line-height: 1.25"><a href="./BC-Ministry.dc.html" style="color:inherit;">BC Ministry of Agriculture</a></h2>
+        <p style="margin:0; font-size:13px; line-height:1.5; color:#6b6b6b; min-height:4.35em;">A complete overview of the communications projects I led and supported during my eight-month co-op.</p>
+        <div style="margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.12); margin-bottom: 35px">
+          <span style="font-size: 9px; font-weight: 600; letter-spacing: 0.08em; color: rgb(138, 138, 138)">MARKETING &middot; CO-OP &middot; 2025<br></span>
+        </div>
+      </div>
+      <div style="flex:0 1 50%; max-width:50%; box-sizing:border-box; display:flex; align-items:stretch; overflow:hidden; border-radius:10px;">
+        <div style="width:100%; aspect-ratio:4/1; border-radius:10px; overflow:hidden; box-sizing:border-box;">
+          <img src="./previews/bc-ministry-preview.png" alt="BC Ministry of Agriculture preview" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </section>
+
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+      <section style="background:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:16px; padding:clamp(20.6px,3.1vw,33px) clamp(28px,4.2vw,44px) clamp(20.6px,3.1vw,33px) clamp(20.6px,3.1vw,33px); display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; padding-bottom: clamp(20.6px,3.1vw,33px); transition:border-color 0.2s ease; will-change:border-color; transform:translateZ(0); position:relative" style-hover="border-color:rgba(0,0,0,0.4);">
+      <a href="{{ p.href }}" data-cursor-cta="1" data-cursor-label="{{ p.cursorLabel }}" aria-label="View project" style="position:absolute; inset:0; z-index:3; border-radius:16px;"></a>
+        <div style="flex:1 1 220px; max-width:280px;">
+          <h2 style="margin: 0 0 10px; font-family: 'Noto Serif',serif; font-weight: 300; font-size: 22px; color: #111111; line-height: 1.25"><a href="{{ p.href }}" style="color:inherit;">{{ p.title }}</a></h2>
+          <p style="margin:0; font-size:13px; line-height:1.5; color:#6b6b6b; min-height:4.35em;">{{ p.desc }}</p>
+          <div style="margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.12); margin-bottom: 35px">
+            <span style="font-size: 9px; font-weight: 600; letter-spacing: 0.08em; color: rgb(138, 138, 138)">{{ p.meta }}<br></span>
+          </div>
+        </div>
+        <div style="flex:0 1 50%; max-width:50%; box-sizing:border-box; display:flex; align-items:stretch; overflow:hidden; border-radius:10px;">
+          <div style="width:100%; aspect-ratio:4/1; border-radius:10px; overflow:hidden; box-sizing:border-box; position:relative; background:linear-gradient(160deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" ref="{{ p.imgRef }}" alt="{{ p.title }} preview" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <sc-if value="{{ p.noSrc }}" hint-placeholder-val="{{ true }}">
+              <span style="position:absolute; left:10px; bottom:10px; font-size:8px; font-family:monospace; letter-spacing:0.04em; color:rgba(0,0,0,0.35); text-transform:uppercase;">preview</span>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+
+    <div style="display:flex; justify-content:center; margin-top:26px;">
+      <a href="./Work.dc.html" style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#111111; border:1px solid rgba(0,0,0,0.35); padding:12px 26px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">VIEW ALL PROJECTS</a>
+    </div>
+  </main>
+
+  <footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let’s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#1a1a1a;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#1a1a1a;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#1a1a1a;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#1a1a1a;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#1a1a1a;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">✧</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">✧</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1300}}">class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._open = true;
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label');
+        if (label) label.textContent = custom || 'VIEW CASE STUDY \u2192';
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+        if (label) label.style.opacity = '1';
+      } else if (!over && this._open) {
+        this._open = false;
+        this._openEl = null;
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+        if (label) label.style.opacity = '0';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  renderVals() {
+    const TRANSPARENT_PX = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7";
+    const projectsData = [
+      { title: "XOR Consulting", cursorLabel: "CURRENTLY WORKING ON \u2192", meta: "WEB DESIGN \u00b7 CONTRACT \u00b7 2026", href: "./XOR-Consulting.dc.html", imgSrc: "./previews/xor-preview.png", desc: "A complete website redesign, strategic repositioning, and rewritten website copy for a boutique consulting firm." },
+      { title: "SFU Surge", meta: "VISUAL DESIGN \u00b7 CLUB \u00b7 2025", href: "./SFU-Surge.dc.html", imgSrc: "./sfu-surge-preview.png", desc: "Everything I designed as Visual Design Coordinator at SFU's largest tech club." },
+      { title: "Marin French", meta: "SOCIAL MEDIA \u00b7 PERSONAL PROJECT \u00b7 2026", href: "./Marin-French.dc.html", imgSrc: "./previews/marin-french-preview.png", desc: "Social content and creative direction for a Gen Z French tutor." }
+    ];
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      projects: projectsData.map(p => ({
+        ...p,
+        imgRef: (el) => { if (el && el.src !== p.imgSrc) { try { el.src = p.imgSrc; } catch (e) {} } }
+      }))
+    };
+  }
+}</script>
+</body>
+</html>

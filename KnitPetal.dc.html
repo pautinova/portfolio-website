@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+    <a href="./Work.dc.html" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">&larr; BACK TO WORK</a>
+    <h1 style="margin:16px 0 0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(30px,5vw,46px); color:#111111;">KnitPetal</h1>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.7; color:#6b6b6b;">For my AI Today and Tomorrow course, I vibe-coded my first website: a knitting machine calculator that takes a user&rsquo;s body measurements and automatically generates a customized knitting pattern tailored to their proportions.</p>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.7; color:#6b6b6b;">I created the knitting calculator because many machine-knitting patterns are based on standard sizes and require manual adjustments. I wanted to automate those calculations.</p>
+
+    <div style="margin-top:32px; display:flex; flex-wrap:wrap; gap:clamp(24px,5vw,64px); padding:24px 0; border-top:1px solid rgba(0,0,0,0.15); border-bottom:1px solid rgba(0,0,0,0.15);">
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">ROLE</span>
+        <span style="font-size:13px; color:#111111;">Designer &amp; Developer</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TIMELINE</span>
+        <span style="font-size:13px; color:#111111;">January &ndash; April 2026</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Claude Code</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+
+    <section style="margin-bottom:clamp(50px,8vw,80px);">
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Project goals</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
+        <div style="background:#ffffff; border:1px solid rgba(0,0,0,0.08); box-shadow:0 4px 24px rgba(0,0,0,0.04); border-radius:16px; padding:24px;">
+          <h3 style="margin:0 0 14px; font-family:'Noto Serif',serif; font-weight:500; font-size:17px; color:#111111;">Automate the calculations</h3>
+          <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#6b6b6b; display:flex; flex-direction:column; gap:6px;">
+            <li>Remove the manual adjustments machine-knitting patterns usually require.</li>
+            <li>Generate a full pattern from a set of measurements, downloadable as a PDF.</li>
+          </ul>
+        </div>
+        <div style="background:#ffffff; border:1px solid rgba(0,0,0,0.08); box-shadow:0 4px 24px rgba(0,0,0,0.04); border-radius:16px; padding:24px;">
+          <h3 style="margin:0 0 14px; font-family:'Noto Serif',serif; font-weight:500; font-size:17px; color:#111111; white-space:nowrap;">Fit real proportions</h3>
+          <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#6b6b6b; display:flex; flex-direction:column; gap:6px;">
+            <li>Tailor patterns to a knitter's own body measurements rather than standard sizes.</li>
+            <li>Let the user choose between two versions: long sleeve and short sleeve.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:20px; margin:0 0 24px;">
+        <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Website</h2>
+        <a href="https://pautinova.github.io/knitpetal/" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#111111; white-space:nowrap;">GITHUB LINK &rarr;</a>
+      </div>
+      <div style="position:relative;">
+        <x-import component-from-global-scope="ChromeWindow" from="./browser-window.jsx" url="" tabs="{{ screenTabs }}" active-index="{{ screenIndex }}" width="100%" height="{{ 640 }}" hint-size="100%,640px">
+          <a href="https://pautinova.github.io/knitpetal/" target="_blank" rel="noopener" style="display:block;">
+            <img ref="{{ activeScreen.imgRef }}" alt="KnitPetal website" style="width:100%; height:auto; display:block;">
+          </a>
+        </x-import>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let&rsquo;s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#1a1a1a;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#1a1a1a;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#1a1a1a;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#1a1a1a;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#1a1a1a;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label') || 'VIEW \u2192';
+        if (label) { label.textContent = custom; label.style.opacity = '1'; }
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+      } else if (!over && this._openEl) {
+        this._openEl = null;
+        if (label) label.style.opacity = '0';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  state = { screenIndex: 0 };
+
+  renderVals() {
+    const screenData = [
+      { id: "knitpetal-screen-1", placeholder: "Drop a screenshot", title: "KnitPetal" }
+    ];
+    const idx = this.state.screenIndex;
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      screenIndex: idx,
+      screenTabs: screenData.map((s, i) => ({
+        title: s.title,
+        onClick: () => this.setState({ screenIndex: i })
+      })),
+      screens: screenData.map((s, i) => ({
+        dotColor: i === idx ? "#111111" : "rgba(0,0,0,0.2)",
+        select: () => this.setState({ screenIndex: i })
+      })),
+      activeScreen: {
+        ...screenData[idx],
+        imgRef: (el) => { if (el && el.src.indexOf("knitpetal-screen.png") === -1) { try { el.src = "./knitpetal-screen.png"; } catch (e) {} } }
+      },
+      prevScreen: () => this.setState(s => ({ screenIndex: (s.screenIndex - 1 + screenData.length) % screenData.length })),
+      nextScreen: () => this.setState(s => ({ screenIndex: (s.screenIndex + 1) % screenData.length }))
+    };
+  }
+}
+</script>
+</body>
+</html>

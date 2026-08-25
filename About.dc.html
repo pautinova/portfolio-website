@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <main style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+
+    <section style="display:flex; gap:clamp(24px,4vw,48px); flex-wrap:wrap; align-items:flex-start;">
+      <div style="flex:1 1 280px; max-width:340px;">
+        <image-slot id="about-photo" shape="rounded" radius="20" placeholder="Drop a photo" src="./about-photo-web.jpg" style="width:100%; aspect-ratio:1/1.05;"></image-slot>
+      </div>
+      <div style="flex:2 1 380px; padding-top:6px;">
+        <h1 style="margin:0 0 18px; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Hi! I&rsquo;m Tinay!</h1>
+        <p style="margin:0 0 16px; font-size:14px; line-height:1.7; color:#1a1a1a;">I&rsquo;ve always been drawn to marketing for its range &mdash; it rewards creativity and analytical thinking in equal measure, and I like living in that overlap.</p>
+        <p style="margin:0 0 16px; font-size:14px; line-height:1.7; color:#1a1a1a;">Lately that&rsquo;s meant exploring where marketing meets technology: teaching myself new tools, building my own site, and using AI to speed up how I research, write, and iterate.</p>
+        <p style="margin:0; font-size:14px; line-height:1.7; color:#1a1a1a;">I learn best by doing, so most of what I know, I picked up by trying to solve a real problem first.</p>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px); background:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.65); border-radius:16px; padding:clamp(20px,3vw,32px);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.15);">
+        <span style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">EXPERIENCE</span>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">FULL RESUME &rarr;</a>
+      </div>
+
+      <sc-for list="{{ experience }}" as="job" hint-placeholder-count="4">
+        <div style="padding:18px 0; border-bottom:1px solid rgba(0,0,0,0.08); transition:transform 0.2s ease;" style-hover="transform:translateX(10px);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+            <h3 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:15px; color:#111111;">{{ job.title }}</h3>
+            <span style="font-size:10px; font-weight:600; letter-spacing:0.05em; color:#8a8a8a; white-space:nowrap;">{{ job.dates }}</span>
+          </div>
+          <p style="margin:6px 0 0; font-size:11px; line-height:1.5; color:#6b6b6b;">{{ job.desc }}</p>
+        </div>
+      </sc-for>
+
+      <div style="padding-top:24px; padding-bottom:14px; margin-top:10px; border-bottom:1px solid rgba(0,0,0,0.15);">
+        <span style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">LEADERSHIP</span>
+      </div>
+
+      <sc-for list="{{ leadership }}" as="job" hint-placeholder-count="4">
+        <div style="padding:18px 0; border-bottom:1px solid rgba(0,0,0,0.08); transition:transform 0.2s ease;" style-hover="transform:translateX(10px);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+            <h3 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:15px; color:#111111;">{{ job.title }}</h3>
+            <span style="font-size:10px; font-weight:600; letter-spacing:0.05em; color:#8a8a8a; white-space:nowrap;">{{ job.dates }}</span>
+          </div>
+          <p style="margin:6px 0 0; font-size:11px; line-height:1.5; color:#6b6b6b;">{{ job.desc }}</p>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="margin-top:14px; background:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.65); border-radius:16px; padding:clamp(20px,3vw,32px);">
+      <div style="padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.15);">
+        <span style="font-size:11px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">EDUCATION</span>
+      </div>
+      <div style="padding-top:18px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
+          <h3 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:15px; color:#111111;">Simon Fraser University &mdash; Beedie School of Business</h3>
+          <span style="font-size:10px; font-weight:600; letter-spacing:0.05em; color:#8a8a8a; white-space:nowrap;">2022 &mdash; 2026</span>
+        </div>
+        <p style="margin:8px 0 0; font-size:13px; line-height:1.6; color:#6b6b6b;">
+          BBA, Concentration in Marketing and Strategic Analysis<br>
+          Certificate: Data Analytics Skills Camp, Beedie School of Business<br>
+          Relevant Coursework: AI Today and Tomorrow, Web Analytics, Marketing Research, Integrated Communications
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let&rsquo;s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#111111;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#111111;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#111111;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#111111;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#111111;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#111111;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#111111;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label') || 'VIEW \u2192';
+        if (label) { label.textContent = custom; label.style.opacity = '1'; }
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+      } else if (!over && this._openEl) {
+        this._openEl = null;
+        if (label) label.style.opacity = '0';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  renderVals() {
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      experience: [
+        { title: "Marketing Assistant — XOR Consulting", dates: "07/2026 — PRESENT", desc: "Rebuilding a WordPress website, covering design, copywriting and SEO optimization." },
+        { title: "Teaching Assistant — Consumer Behaviour (BUS 347) — SFU", dates: "01/2025 — 08/2025", desc: "Led 9 weekly tutorials on consumer psychology and brand management, held office hours, and graded assessments for a 40-student course section." },
+        { title: "Communications Co-op — BC Ministry of Agriculture and Food", dates: "01/2025 — 08/2025", desc: "Everything from email marketing, social media, content writing, event coordination, and website management to designing print and digital materials." },
+        { title: "Accounting and Administrative Assistant — Falesca Importing", dates: "05/2023 — 12/2023", desc: "My first professional role, where I built a foundation in accounting, customer service, Shopify, and office administration before pursuing marketing." }
+      ],
+      leadership: [
+        { title: "Visual Designer — SFU Surge", dates: "03/2024 — 02/2025", desc: "Created visual assets for two hackathons, including web pages, social media graphics, event presentation decks, posters, and branded merchandise." },
+        { title: "Social Media Coordinator — SFU Marketing Association", dates: "06/2024 — 02/2025", desc: "Managed Instagram and LinkedIn by creating original content, filming videos, designing graphics, and maintaining a consistent content calendar." },
+        { title: "Social Media Manager — Eunoia UX Design Jam", dates: "02/2023 — 05/2023", desc: "Managed social media across Instagram, LinkedIn, and Discord, fostered community engagement, and delivered live hackathon coverage." },
+        { title: "Marketing Director — SFU Central Asian Student Association", dates: "01/2023 — 03/2023", desc: "Founding member of SFU's first Central Asian student club, responsible for social media content and event organization." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

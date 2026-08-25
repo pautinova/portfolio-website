@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+    <a href="./Work.dc.html" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">&larr; BACK TO WORK</a>
+    <h1 style="margin:16px 0 0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(30px,5vw,46px); color:#111111;">Marin French</h1>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:100%;">A creative side project where my friend and I built a fictional Instagram brand for a Gen Z French tutor while learning French ourselves. I lead the content design and creative direction, translating language lessons into trend-driven, visually engaging posts inspired by pop culture and online culture.</p>
+
+    <div style="margin-top:32px; display:flex; flex-wrap:wrap; gap:clamp(24px,5vw,64px); padding:24px 0; border-top:1px solid rgba(0,0,0,0.15); border-bottom:1px solid rgba(0,0,0,0.15);">
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">ROLE</span>
+        <span style="font-size:13px; color:#111111;">Social Media Designer</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TIMELINE</span>
+        <span style="font-size:13px; color:#111111;">June 2026 &ndash; Present</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+    <section style="margin-bottom:clamp(50px,8vw,80px);">
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Instagram posts (swipe through!)</h2>
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+        <sc-for list="{{ posts }}" as="post" hint-placeholder-count="2">
+          <div style="border:1px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden; background:#ffffff; grid-column:{{ post.gridColumn }}; max-width:{{ post.cardMaxWidth }}; width:100%; margin:0 auto;">
+            <div style="display:flex; align-items:center; gap:10px; padding:12px 14px;">
+              <img src="./marin-avatar.jpeg" alt="marinfrench profile" style="width:32px; height:32px; border-radius:50%; object-fit:cover; flex-shrink:0; display:block;">
+              <span style="font-size:13px; font-weight:600; color:#111111;">marinfrench</span>
+            </div>
+
+            <div style="position:relative; overflow:hidden; background:rgba(0,0,0,0.03);">
+              <div style="display:flex; transition:transform 0.35s ease; transform:translateX({{ post.offset }});">
+                <sc-for list="{{ post.slides }}" as="slide" hint-placeholder-count="3">
+                  <div style="flex:0 0 100%; min-width:100%;">
+                    <image-slot id="{{ slide.id }}" shape="rect" fit="cover" src="{{ slide.src }}" placeholder="Drop a post image" style="width:100%; aspect-ratio:4/5;"></image-slot>
+                  </div>
+                </sc-for>
+              </div>
+
+              <span style="position:absolute; top:12px; right:12px; padding:3px 9px; border-radius:12px; background:rgba(0,0,0,0.55); color:#ffffff; font-size:11px; font-weight:600;">{{ post.counter }}</span>
+
+              <button onClick="{{ post.prev }}" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); width:28px; height:28px; border-radius:50%; border:none; background:rgba(255,255,255,0.9); color:#111111; font-size:13px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.12);">&larr;</button>
+              <button onClick="{{ post.next }}" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); width:28px; height:28px; border-radius:50%; border:none; background:rgba(255,255,255,0.9); color:#111111; font-size:13px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.12);">&rarr;</button>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:5px; padding:10px 0 12px;">
+              <sc-for list="{{ post.dots }}" as="dot" hint-placeholder-count="3">
+                <button onClick="{{ dot.select }}" style="width:6px; height:6px; border-radius:50%; border:none; padding:0; background:{{ dot.color }}; cursor:pointer;"></button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let&rsquo;s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#1a1a1a;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#1a1a1a;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#1a1a1a;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#1a1a1a;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#1a1a1a;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label') || 'VIEW \u2192';
+        if (label) { label.textContent = custom; label.style.opacity = '1'; }
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+      } else if (!over && this._openEl) {
+        this._openEl = null;
+        if (label) label.style.opacity = '0';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  state = { postIndex: [0, 0, 0, 0, 0] };
+
+  setPost(p, i) {
+    this.setState(s => {
+      const next = s.postIndex.slice();
+      next[p] = i;
+      return { postIndex: next };
+    });
+  }
+
+  renderVals() {
+    const postDefs = [
+      { key: "welcome-a", count: 5 },
+      { key: "welcome-b", count: 4 },
+      { key: "welcome-c", count: 5 },
+      { key: "welcome-d", count: 4 },
+      { key: "welcome-e", count: 4, centered: true }
+    ];
+    const posts = postDefs.map((def, p) => {
+      const idx = this.state.postIndex[p] || 0;
+      const slides = [];
+      const dots = [];
+      const HAS_FILE = {
+        "welcome-a": 5, "welcome-b": 4, "welcome-c": 5, "welcome-d": 4, "welcome-e": 4
+      };
+      for (let i = 0; i < def.count; i++) {
+        const slotId = "marin-" + def.key + "-" + (i + 1);
+        const hasFile = (i + 1) <= (HAS_FILE[def.key] || 0);
+        slides.push({ id: slotId, src: hasFile ? "./marin/" + slotId + ".webp" : "" });
+        dots.push({
+          color: i === idx ? "#111111" : "rgba(0,0,0,0.2)",
+          select: () => this.setPost(p, i)
+        });
+      }
+      return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+        slides,
+        dots,
+        gridColumn: def.centered ? "1 / -1" : "auto",
+        cardMaxWidth: def.centered ? "calc(50% - 12px)" : "none",
+        offset: (-idx * 100) + "%",
+        counter: (idx + 1) + "/" + def.count,
+        prev: () => this.setPost(p, (idx - 1 + def.count) % def.count),
+        next: () => this.setPost(p, (idx + 1) % def.count)
+      };
+    });
+
+    return { posts };
+  }
+}
+</script>
+</body>
+</html>

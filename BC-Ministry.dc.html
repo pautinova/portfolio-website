@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+    <a href="./Work.dc.html" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">&larr; BACK TO WORK</a>
+    <h1 style="margin:16px 0 0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(30px,5vw,46px); color:#111111;">BC Ministry of Agriculture</h1>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:100%;">A complete overview of the communications projects I led and supported during my eight-month co-op &mdash; spanning email marketing, social media, content writing, event coordination, and website management.</p>
+
+    <div style="margin-top:32px; display:flex; flex-wrap:wrap; gap:clamp(24px,5vw,64px); padding:24px 0; border-top:1px solid rgba(0,0,0,0.15); border-bottom:1px solid rgba(0,0,0,0.15);">
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">ROLE</span>
+        <span style="font-size:13px; color:#111111;">Communications Co-op</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TIMELINE</span>
+        <span style="font-size:13px; color:#111111;">January &ndash; August 2025</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TEAM</span>
+        <span style="font-size:13px; color:#111111;">Agriservice</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+
+    <section>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:24px;">
+        <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Social media</h2>
+        <div style="text-align:right;">
+          <span style="display:block; font-size:clamp(28px,4vw,36px); font-weight:600; font-family:'Noto Sans',sans-serif; background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">25%</span>
+          <span style="font-size:10px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">INCREASE IN FACEBOOK ENGAGEMENT</span>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Figma, Adobe Illustrator</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">I managed the Ministry's Facebook page, designing social graphics within strict government style guidelines. I built a structured content calendar and increased posting frequency from twice a week to daily.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
+        <sc-for list="{{ socialPosts }}" as="s" hint-placeholder-count="3">
+          <div>
+            <image-slot id="{{ s.id }}" shape="rounded" radius="12" fit="contain" placeholder="Drop a social post image" src="{{ s.src }}" style="width:100%; aspect-ratio:1/1;"></image-slot>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px);">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:24px;">
+        <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Email newsletters</h2>
+        <div style="text-align:right;">
+          <span style="display:block; font-size:clamp(28px,4vw,36px); font-weight:600; font-family:'Noto Sans',sans-serif; background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">48%</span>
+          <span style="font-size:10px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">INCREASE IN SUBSCRIBER LIST (1,800 TO 2,668)</span>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Campaign Monitor, later Mailchimp</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:100%;">I created and distributed over 80 newsletters across nine provincial regions and supported the team's migration from Campaign Monitor to Mailchimp. I also rebuilt templates and used engagement data to improve content hierarchy, including moving event information higher and adding a hyperlinked table of contents to make longer newsletters easier to navigate.</p>
+      <div style="position:relative; width:100%; margin:0 auto;">
+        <img src="{{ activeNewsletter.src }}" alt="Newsletter" style="width:100%; height:auto; max-height:800px; object-fit:contain; display:block; border-radius:12px; transform:scale({{ activeNewsletter.scale }});">
+        <button onClick="{{ prevNewsletter }}" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#fff; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:16px;">&larr;</button>
+        <button onClick="{{ nextNewsletter }}" style="position:absolute; right:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#fff; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:16px;">&rarr;</button>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+        <sc-for list="{{ newsletters }}" as="n" hint-placeholder-count="2">
+          <button onClick="{{ n.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ n.dotColor }}; cursor:pointer;"></button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px);">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:24px;">
+        <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Cover crop cards</h2>
+        <a href="https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/agriculture-and-seafood/agricultural-land-and-environment/soil-nutrients/cover-crops/covercrop_plant_id_cards.pdf" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#1a1a1a;">SEE ALL CARDS &rarr;</a>
+      </div>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Figma</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">I also produced over 90 Cover Crop ID cards &mdash; quick visual references to help farmers and growers identify species in their early growth stages. This involved summarizing technical content, writing copy, and standardizing layouts for print production.</p>
+      <div style="position:relative;">
+        <div style="display:flex; gap:16px;">
+          <div style="flex:1 1 0; aspect-ratio:1206/1057; position:relative;">
+            <image-slot id="{{ activeCoverCropA.id }}" shape="rounded" radius="12" fit="contain" src="{{ activeCoverCropA.src }}" placeholder="Drop a cover crop card"></image-slot>
+          </div>
+          <div style="flex:1 1 0; aspect-ratio:1206/1057; position:relative;">
+            <image-slot id="{{ activeCoverCropB.id }}" shape="rounded" radius="12" fit="contain" src="{{ activeCoverCropB.src }}" placeholder="Drop a cover crop card"></image-slot>
+          </div>
+          <div style="flex:1 1 0; aspect-ratio:1206/1057; position:relative;">
+            <image-slot id="{{ activeCoverCropC.id }}" shape="rounded" radius="12" fit="contain" src="{{ activeCoverCropC.src }}" placeholder="Drop a cover crop card"></image-slot>
+          </div>
+        </div>
+        <button onClick="{{ prevCoverCrop }}" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&larr;</button>
+        <button onClick="{{ nextCoverCrop }}" style="position:absolute; right:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&rarr;</button>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+        <sc-for list="{{ coverCrops }}" as="c" hint-placeholder-count="3">
+          <button onClick="{{ c.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ c.dotColor }}; cursor:pointer;"></button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px);">
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Factsheets & infographics</h2>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Figma, Word</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Working with agrologists and environmental specialists, I drafted, edited, and designed program overviews, fact sheets, and reports.</p>
+      <div style="position:relative;">
+        <div style="display:flex; gap:16px; align-items:center; justify-content:center;">
+          <img src="{{ activeFactsheetA.src }}" alt="Factsheet" style="flex:1 1 0; width:0; min-width:0; height:auto; max-height:520px; object-fit:contain; display:block;">
+          <img src="{{ activeFactsheetB.src }}" alt="Factsheet" style="flex:1 1 0; width:0; min-width:0; height:auto; max-height:520px; object-fit:contain; display:block;">
+          <img src="{{ activeFactsheetC.src }}" alt="Factsheet" style="flex:1 1 0; width:0; min-width:0; height:auto; max-height:520px; object-fit:contain; display:block;">
+        </div>
+        <button onClick="{{ prevFactsheet }}" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&larr;</button>
+        <button onClick="{{ nextFactsheet }}" style="position:absolute; right:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&rarr;</button>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+        <sc-for list="{{ factsheets }}" as="f" hint-placeholder-count="3">
+          <button onClick="{{ f.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ f.dotColor }}; cursor:pointer;"></button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px); background:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.65); border-radius:16px; padding:clamp(24px,4vw,36px);">
+      <h2 style="margin:0 0 14px; font-family:'Noto Serif',serif; font-weight:500; font-size:22px; color:#111111;">Reflection</h2>
+      <p style="margin:0 0 14px; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:900px;">Thanks for reading to the end!</p>
+      <p style="margin:0; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:900px;">This co-op marked the start of my career in marketing and communications. Working in a deadline-driven environment taught me how to prioritize competing projects, manage multiple stakeholders, and produce high-quality work under strict guidelines. It also left me eager to work in more experimental, fast-paced environments where ideas are tested, measured, and continuously refined through analytics and experimentation.</p>
+    </section>
+  </main>
+
+  <footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let&rsquo;s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#111111;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#111111;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#111111;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#111111;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#111111;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#111111;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#111111;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">&#10023;</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1600}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label') || 'VIEW \u2192';
+        if (label) { label.textContent = custom; label.style.opacity = '1'; }
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+      } else if (!over && this._openEl) {
+        this._openEl = null;
+        if (label) label.style.opacity = '0';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  state = { coverIndex: 0, factIndex: 0, newsletterIndex: 0 };
+  renderVals() {
+    const newslettersData = [
+      { id: "bc-newsletter-1", src: "./newsletter-1.png", scale: 1 },
+      { id: "bc-newsletter-2", src: "./newsletter-2.png", scale: 1.1 }
+    ];
+    const nIdx = this.state.newsletterIndex;
+    const factsheetsData = [
+      { id: "bc-fact-1", src: "./fact-1.png" },
+      { id: "bc-fact-2", src: "./fact-2.png" },
+      { id: "bc-fact-3", src: "./fact-3.png" },
+      { id: "bc-fact-ebulletin", src: "./fact-ebulletin.png" },
+      { id: "bc-fact-4", src: "./fact-4.png" },
+      { id: "bc-fact-5", src: "./fact-5.png" },
+      { id: "bc-fact-6", src: "./fact-6.png" },
+      { id: "bc-fact-7", src: "./fact-7.png" }
+    ];
+    const fIdx = this.state.factIndex;
+    const coverCropsData = [
+      { id: "bc-cover-1", src: "./cover-1.png" },
+      { id: "bc-cover-2", src: "./cover-2.png" },
+      { id: "bc-cover-3", src: "./cover-3.png" },
+      { id: "bc-cover-4", src: "./cover-4.png" },
+      { id: "bc-cover-5", src: "./cover-5.png" },
+      { id: "bc-cover-6", src: "./cover-6.png" },
+      { id: "bc-cover-7", src: "./cover-7.png" },
+      { id: "bc-cover-8", src: "./cover-8.png" }
+    ];
+    const idx = this.state.coverIndex;
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      socialPosts: [
+        { id: "bc-social-7", src: "./social-7.png" },
+        { id: "bc-social-1", src: "./social-1.png" },
+        { id: "bc-social-2", src: "./social-2.png" },
+        { id: "bc-social-4", src: "./social-4.png" },
+        { id: "bc-social-5", src: "./social-5.png" },
+        { id: "bc-social-6", src: "./social-6.png" },
+        { id: "bc-social-8", src: "./social-8.png" },
+        { id: "bc-social-9", src: "./social-9.png" },
+        { id: "bc-social-3", src: "./social-3.png" }
+      ],
+      coverCrops: coverCropsData.map((c, i) => ({
+        ...c,
+        dotColor: i === idx ? "#1a1a1a" : "rgba(0,0,0,0.2)",
+        select: () => this.setState({ coverIndex: i })
+      })),
+      activeCoverCropA: coverCropsData[idx],
+      activeCoverCropB: coverCropsData[(idx + 1) % coverCropsData.length],
+      activeCoverCropC: coverCropsData[(idx + 2) % coverCropsData.length],
+      prevCoverCrop: () => this.setState(s => ({ coverIndex: (s.coverIndex - 1 + coverCropsData.length) % coverCropsData.length })),
+      nextCoverCrop: () => this.setState(s => ({ coverIndex: (s.coverIndex + 1) % coverCropsData.length })),
+      factsheets: factsheetsData.map((f, i) => ({
+        ...f,
+        dotColor: i === fIdx ? "#1a1a1a" : "rgba(0,0,0,0.2)",
+        select: () => this.setState({ factIndex: i })
+      })),
+      activeFactsheetA: factsheetsData[fIdx],
+      activeFactsheetB: factsheetsData[(fIdx + 1) % factsheetsData.length],
+      activeFactsheetC: factsheetsData[(fIdx + 2) % factsheetsData.length],
+      prevFactsheet: () => this.setState(s => ({ factIndex: (s.factIndex - 1 + factsheetsData.length) % factsheetsData.length })),
+      nextFactsheet: () => this.setState(s => ({ factIndex: (s.factIndex + 1) % factsheetsData.length })),
+      newsletters: newslettersData.map((n, i) => ({
+        ...n,
+        dotColor: i === nIdx ? "#1a1a1a" : "rgba(0,0,0,0.2)",
+        select: () => this.setState({ newsletterIndex: i })
+      })),
+      activeNewsletter: newslettersData[nIdx],
+      prevNewsletter: () => this.setState(s => ({ newsletterIndex: (s.newsletterIndex - 1 + newslettersData.length) % newslettersData.length })),
+      nextNewsletter: () => this.setState(s => ({ newsletterIndex: (s.newsletterIndex + 1) % newslettersData.length }))
+    };
+  }
+}
+</script>
+</body>
+</html>

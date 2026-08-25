@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
+    @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
+    body { margin: 0; background: #ffffff; }
+    ::selection { background: #e5e5e5; }
+    a { color: #1a1a1a; text-decoration: none; }
+    a:hover { color: #737373; }
+    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+    <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
+  </div>
+
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
+    <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+    </div>
+  </nav>
+
+  <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+    <a href="./Work.dc.html" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">← BACK TO WORK</a>
+    <h1 style="margin:16px 0 0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(30px,5vw,46px); color:#111111;">SFU Surge</h1>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.7; color:#6b6b6b; max-width:100%;">At SFU Surge, I worked with a team of six designers to develop marketing assets for student events and hackathons. I designed social media graphics, print materials, event webpages, and branded merchandise.</p>
+
+    <div style="margin-top:32px; display:flex; flex-wrap:wrap; gap:clamp(24px,5vw,64px); padding:24px 0; border-top:1px solid rgba(0,0,0,0.15); border-bottom:1px solid rgba(0,0,0,0.15);">
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">ROLE</span>
+        <span style="font-size:13px; color:#111111;">Visual Designer</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TIMELINE</span>
+        <span style="font-size:13px; color:#111111;">March 2024 – February 2025</span>
+      </div>
+      <div>
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TEAM</span>
+        <span style="font-size:13px; color:#111111;">6 Visual Designers</span>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <main style="max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
+
+    <section>
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Social media</h2>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Figma, Adobe Illustrator</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Some of the social media posts I designed for StormHacks 2024.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
+        <sc-for list="{{ socialPosts }}" as="s" hint-placeholder-count="6">
+          <div>
+            <image-slot id="{{ s.id }}" shape="rounded" radius="12" fit="cover" src="{{ s.src }}" placeholder="Drop a social post image" style="width:100%; aspect-ratio:1/1;"></image-slot>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px);">
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Website</h2>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Figma</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Webpages for StormHacks 2024 and JourneyHacks 2025.</p>
+      <div style="position:relative;">
+        <x-import component-from-global-scope="ChromeWindow" from="./browser-window.jsx" url="{{ activeWebsite.url }}" tabs="{{ websiteTabs }}" active-index="{{ websiteIndex }}" width="100%" height="{{ 640 }}" hint-size="100%,640px">
+          <sc-if value="{{ activeWebsite.src }}" hint-placeholder-val="{{ false }}">
+            <img ref="{{ activeWebsite.imgRef }}" alt="{{ activeWebsite.placeholder }}" style="width:100%; height:auto; display:block;">
+          </sc-if>
+          <sc-if value="{{ activeWebsite.noSrc }}" hint-placeholder-val="{{ true }}">
+            <div style="width:100%; min-height:640px; display:flex; align-items:center; justify-content:center; color:#8a8a8a; font-size:13px;">{{ activeWebsite.placeholder }}</div>
+          </sc-if>
+        </x-import>
+        <button onClick="{{ prevWebsite }}" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
+        <button onClick="{{ nextWebsite }}" style="position:absolute; right:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+        <sc-for list="{{ websites }}" as="w" hint-placeholder-count="2">
+          <button onClick="{{ w.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ w.dotColor }}; cursor:pointer;"></button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-top:clamp(50px,8vw,80px); position:relative;">
+      <img src="./surge-sticker-2.png" alt="StormHacks sticker 2" style="position: absolute; top: -23px; left: 603px; width: 375px; z-index: 2; height: 281px"><img src="./surge-sticker.png" alt="StormHacks sticker" style="position: absolute; top: 32px; width: 384px; z-index: 2; height: 290px; left: 705px">
+      
+      <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Extra</h2>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-size:9px; font-weight:600; letter-spacing:0.08em; color:#8a8a8a; margin-bottom:6px;">TOOLS</span>
+        <span style="font-size:13px; color:#111111;">Adobe Illustrator</span>
+      </div>
+      <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Poster, colouring sheets, and stickers.</p>
+      <div style="display: flex; gap: 20px; align-items: flex-start; position: relative">
+        <sc-for list="{{ extraImages }}" as="e" hint-placeholder-count="3">
+          <div style="flex:0 1 {{ e.width }}; min-width:0;">
+            <image-slot id="{{ e.id }}" shape="rounded" radius="12" fit="{{ e.fit }}" src="{{ e.src }}" placeholder="Drop an image" style="width:100%; aspect-ratio:{{ e.ratio }};"></image-slot>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </main><footer style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) clamp(30px,5vw,50px); display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;">
+    <h2 style="margin:0; font-family:'Noto Serif',serif; font-weight:400; font-size:clamp(28px,4vw,36px); background:linear-gradient(to right, #000000B3, #111111); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Let’s connect!</h2>
+    <div style="display:flex; gap:clamp(30px,6vw,60px); flex-wrap:wrap;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Portfolio.dc.html" style="font-size:13px; color:#1a1a1a;">Home</a>
+        <a href="./Work.dc.html" style="font-size:13px; color:#1a1a1a;">Work</a>
+        <a href="./About.dc.html" style="font-size:13px; color:#1a1a1a;">About</a>
+        <a href="./Extra.dc.html" style="font-size:13px; color:#1a1a1a;">Extra</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.linkedin.com/in/tina-yernazarova/" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">LinkedIn</a>
+        <a href="mailto:t.n.yernazarova@gmail.com" style="font-size:13px; color:#1a1a1a;">Email</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:13px; color:#1a1a1a;">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 clamp(20px,4vw,48px) 30px; display:flex; align-items:center; gap:8px; font-size:11px; color:#8a8a8a;">
+    <span>Tinay Yernazarova</span>
+    <span style="color:#8a8a8a;">✧</span>
+    <span>Last updated in August 2026</span>
+    <span style="color:#8a8a8a;">✧</span>
+    <span>Built with care</span>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    this._move = (e) => {
+      const dot = this._dot, label = this._label;
+      if (!dot) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      const over = e.target && e.target.closest && e.target.closest('[data-cursor-cta]');
+      if (over && this._openEl !== over) {
+        this._openEl = over;
+        const custom = over.getAttribute('data-cursor-label') || 'VIEW \u2192';
+        if (label) { label.textContent = custom; label.style.opacity = '1'; }
+        dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
+        dot.style.height = '30px';
+        dot.style.borderRadius = '6px';
+      } else if (!over && this._openEl) {
+        this._openEl = null;
+        if (label) label.style.opacity = '0';
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '999px';
+      }
+    };
+    window.addEventListener('mousemove', this._move);
+  }
+  componentWillUnmount() {
+    if (this._move) window.removeEventListener('mousemove', this._move);
+  }
+
+  state = { websiteIndex: 0 };
+  renderVals() {
+    const websitesData = [
+      { id: "surge-web-stormhacks", placeholder: "Drop a StormHacks 2024 screenshot", src: "./surge-web-stormhacks.png", url: "stormhacks.sfusurge.com" },
+      { id: "surge-web-journeyhacks", placeholder: "Drop a JourneyHacks 2025 screenshot", url: "journeyhacks.sfusurge.com", src: "./surge-web-journeyhacks.png" }
+    ];
+    const idx = this.state.websiteIndex;
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      websiteTabs: [
+        { title: "StormHacks", onClick: () => this.setState({ websiteIndex: 0 }) },
+        { title: "JourneyHacks", onClick: () => this.setState({ websiteIndex: 1 }) }
+      ],
+      websiteIndex: idx,
+      socialPosts: [1,2,3,4,5,6].map(n => ({
+        id: "surge-social-" + n,
+        src: "./surge/surge-social-" + n + ".webp"
+      })),
+      extraImages: [
+        { id: "surge-extra-1", src: "./surge-extra-1.png", width: "50%", fit: "contain", ratio: "4/3" },
+        { id: "surge-extra-2", src: "./surge-extra-2.png", width: "50%", fit: "contain", ratio: "4/3" }
+      ],
+      websites: websitesData.map((w, i) => ({
+        ...w,
+        dotColor: i === idx ? "#111111" : "rgba(0,0,0,0.2)",
+        select: () => this.setState({ websiteIndex: i })
+      })),
+      activeWebsite: {
+        ...websitesData[idx],
+        imgRef: (el) => { if (el && websitesData[idx].src && el.src.indexOf(websitesData[idx].src) === -1) { try { el.src = websitesData[idx].src; } catch (e) {} } }
+      },
+      prevWebsite: () => this.setState(s => ({ websiteIndex: (s.websiteIndex - 1 + websitesData.length) % websitesData.length })),
+      nextWebsite: () => this.setState(s => ({ websiteIndex: (s.websiteIndex + 1) % websitesData.length }))
+    };
+  }
+}
+</script>
+</body>
+</html>
