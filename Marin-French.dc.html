@@ -187,8 +187,6 @@ class Component extends DCLogic {
         });
       }
       return {
-      cursorRef: (el) => { this._dot = el; },
-      cursorLabelRef: (el) => { this._label = el; },
         slides,
         dots,
         gridColumn: def.centered ? "1 / -1" : "auto",
@@ -200,7 +198,11 @@ class Component extends DCLogic {
       };
     });
 
-    return { posts };
+    return {
+      cursorRef: (el) => { this._dot = el; },
+      cursorLabelRef: (el) => { this._label = el; },
+      posts
+    };
   }
 }
 </script>
