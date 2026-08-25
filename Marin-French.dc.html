@@ -71,7 +71,7 @@
               <div style="display:flex; transition:transform 0.35s ease; transform:translateX({{ post.offset }});">
                 <sc-for list="{{ post.slides }}" as="slide" hint-placeholder-count="3">
                   <div style="flex:0 0 100%; min-width:100%;">
-                    <image-slot id="{{ slide.id }}" shape="rect" fit="cover" src="{{ slide.src }}" placeholder="Drop a post image" style="width:100%; aspect-ratio:4/5;"></image-slot>
+                    <img src="{{ slide.src }}" alt="" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;">
                   </div>
                 </sc-for>
               </div>

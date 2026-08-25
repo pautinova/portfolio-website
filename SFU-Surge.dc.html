@@ -74,7 +74,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
         <sc-for list="{{ socialPosts }}" as="s" hint-placeholder-count="6">
           <div>
-            <image-slot id="{{ s.id }}" shape="rounded" radius="12" fit="cover" src="{{ s.src }}" placeholder="Drop a social post image" style="width:100%; aspect-ratio:1/1;"></image-slot>
+            <img src="{{ s.src }}" alt="" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; display:block;">
           </div>
         </sc-for>
       </div>
@@ -118,7 +118,7 @@
       <div style="display: flex; gap: 20px; align-items: flex-start; position: relative">
         <sc-for list="{{ extraImages }}" as="e" hint-placeholder-count="3">
           <div style="flex:0 1 {{ e.width }}; min-width:0;">
-            <image-slot id="{{ e.id }}" shape="rounded" radius="12" fit="{{ e.fit }}" src="{{ e.src }}" placeholder="Drop an image" style="width:100%; aspect-ratio:{{ e.ratio }};"></image-slot>
+            <img src="{{ e.src }}" alt="" style="width:100%; aspect-ratio:{{ e.ratio }}; object-fit:{{ e.fit }}; border-radius:12px; display:block;">
           </div>
         </sc-for>
       </div>

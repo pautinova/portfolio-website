@@ -44,7 +44,7 @@
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
         <a href="{{ p.href }}" data-cursor-cta="1" data-cursor-label="{{ p.cursorLabel }}" style="display:block; background:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:16px; overflow:hidden; transition:border-color 0.2s ease;" style-hover="border-color:rgba(0,0,0,0.4);">
           <div style="width:100%; aspect-ratio:16/10; position:relative;">
-            <image-slot id="{{ p.id }}" shape="rect" fit="cover" placeholder="Drop an image" src="{{ p.src }}"></image-slot>
+            <img src="{{ p.src }}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
           </div>
           <div style="padding:20px clamp(16px,3vw,24px) 24px;">
             <h2 style="margin:0 0 10px; font-family:'Noto Serif',serif; font-weight:500; font-size:20px; color:#111111; line-height:1.25;">{{ p.title }}</h2>
