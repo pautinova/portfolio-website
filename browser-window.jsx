@@ -44,7 +44,7 @@ function ChromeTab({ title = 'New Tab', active = false, onClick }) {
       position: 'relative', height: 34, alignSelf: 'flex-end',
       padding: '0 12px', display: 'flex', alignItems: 'center', gap: 8,
       background: active ? CHROME_C.tabBg : 'transparent',
-      borderRadius: '8px 8px 0 0', minWidth: 120, maxWidth: 220,
+      borderRadius: '8px 8px 0 0', flex: '1 1 auto', minWidth: 0, maxWidth: 220,
       fontFamily: 'system-ui, sans-serif', fontSize: 12,
       color: active ? CHROME_C.text : CHROME_C.dim,
       cursor: onClick ? 'pointer' : 'default',

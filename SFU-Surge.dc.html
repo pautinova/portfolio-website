@@ -88,7 +88,7 @@
       </div>
       <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Webpages for StormHacks 2024 and JourneyHacks 2025.</p>
       <div style="position:relative;">
-        <x-import component-from-global-scope="ChromeWindow" from="./browser-window.jsx" url="{{ activeWebsite.url }}" tabs="{{ websiteTabs }}" active-index="{{ websiteIndex }}" width="100%" height="{{ 640 }}" hint-size="100%,640px">
+        <x-import component-from-global-scope="ChromeWindow" from="./browser-window.jsx" url="{{ activeWebsite.url }}" tabs="{{ websiteTabs }}" active-index="{{ websiteIndex }}" width="100%" height="clamp(320px, 64vw, 640px)" hint-size="100%,640px">
           <sc-if value="{{ activeWebsite.src }}" hint-placeholder-val="{{ false }}">
             <img ref="{{ activeWebsite.imgRef }}" alt="{{ activeWebsite.placeholder }}" style="width:100%; height:auto; display:block;">
           </sc-if>
@@ -96,8 +96,8 @@
             <div style="width:100%; min-height:640px; display:flex; align-items:center; justify-content:center; color:#8a8a8a; font-size:13px;">{{ activeWebsite.placeholder }}</div>
           </sc-if>
         </x-import>
-        <button onClick="{{ prevWebsite }}" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
-        <button onClick="{{ nextWebsite }}" style="position:absolute; right:-18px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
+        <button onClick="{{ prevWebsite }}" style="position:absolute; left:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">←</button>
+        <button onClick="{{ nextWebsite }}" style="position:absolute; right:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">→</button>
       </div>
       <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
         <sc-for list="{{ websites }}" as="w" hint-placeholder-count="2">
@@ -107,7 +107,7 @@
     </section>
 
     <section style="margin-top:clamp(50px,8vw,80px); position:relative;">
-      <img src="./surge-sticker-2.png" alt="StormHacks sticker 2" style="position: absolute; top: -23px; left: 603px; width: 375px; z-index: 2; height: 281px"><img src="./surge-sticker.png" alt="StormHacks sticker" style="position: absolute; top: 32px; width: 384px; z-index: 2; height: 290px; left: 705px">
+      <img src="./surge-sticker-2.png" alt="StormHacks sticker 2" style="position:absolute; top:-2.8vw; left:75%; width:46.6%; height:auto; z-index:2;"><img src="./surge-sticker.png" alt="StormHacks sticker" style="position:absolute; top:4vw; left:87.7%; width:47.8%; height:auto; z-index:2;">
       
       <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Extra</h2>
       <div style="margin-bottom:20px;">
@@ -115,9 +115,9 @@
         <span style="font-size:13px; color:#111111;">Adobe Illustrator</span>
       </div>
       <p style="margin:0 0 24px; font-size:14px; line-height:1.7; color:#6b6b6b;">Poster, colouring sheets, and stickers.</p>
-      <div style="display: flex; gap: 20px; align-items: flex-start; position: relative">
+      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; position:relative;">
         <sc-for list="{{ extraImages }}" as="e" hint-placeholder-count="3">
-          <div style="flex:0 1 {{ e.width }}; min-width:0;">
+          <div style="flex:1 1 calc({{ e.width }} - 10px); min-width:min(100%,240px);">
             <img src="{{ e.src }}" alt="" style="width:100%; aspect-ratio:{{ e.ratio }}; object-fit:{{ e.fit }}; border-radius:12px; display:block;">
           </div>
         </sc-for>

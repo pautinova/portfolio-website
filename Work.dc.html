@@ -40,7 +40,7 @@
   </nav>
 
   <main style="max-width:1000px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(400px, 1fr)); gap:20px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:20px;">
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
         <a href="{{ p.href }}" data-cursor-cta="1" data-cursor-label="{{ p.cursorLabel }}" style="display:block; background:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:16px; overflow:hidden; transition:border-color 0.2s ease;" style-hover="border-color:rgba(0,0,0,0.4);">
           <div style="width:100%; aspect-ratio:16/10; position:relative;">
