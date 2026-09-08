@@ -18,12 +18,12 @@
     ::selection { background: #e5e5e5; }
     a { color: #1a1a1a; text-decoration: none; }
     a:hover { color: #737373; }
-    @media (pointer: fine) { html, body, a, button, * { cursor: none !important; } }
+    @media (pointer: fine) { [data-cursor-cta], [data-cursor-cta] * { cursor: none !important; } }
   </style>
 </helmet>
 
 <div style="position:relative; min-height:100vh; overflow:hidden; background:#ffffff; font-family: 'Noto Sans', sans-serif;">
-  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1);">
+  <div ref="{{ cursorRef }}" style="position:fixed; top:-100px; left:-100px; z-index:9999; pointer-events:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; width:12px; height:12px; background:#3a3a3a; color:#ffffff; border-radius:999px; overflow:hidden; white-space:nowrap; font-family:'Noto Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.1em; transform:translate(-50%,-50%); opacity:0; transition:width 0.28s cubic-bezier(0.22,1,0.36,1), height 0.28s cubic-bezier(0.22,1,0.36,1), opacity 0.15s ease;">
     <span ref="{{ cursorLabelRef }}" style="opacity:0; transition:opacity 0.16s ease;"></span>
   </div>
 
@@ -33,7 +33,7 @@
     <sc-if value="{{ navDesktop }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
         <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
-        <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+        <a href="./Work.dc.html" aria-current="page" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#111111;" style-hover="color:#111111;">WORK</a>
         <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
         <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
         <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
@@ -49,7 +49,7 @@
         <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
           <div style="position:absolute; top:52px; right:0; z-index:30; min-width:190px; display:flex; flex-direction:column; gap:2px; padding:8px; background:#ffffff; border:1px solid rgba(0,0,0,0.12); border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.12);">
             <a href="./Portfolio.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">HOME</a>
-            <a href="./Work.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">WORK</a>
+            <a href="./Work.dc.html" aria-current="page" style="padding:13px 14px; border-radius:6px; background:rgba(0,0,0,0.05); font-size:12px; font-weight:600; letter-spacing:0.06em; color:#111111;" style-hover="background:rgba(0,0,0,0.05);">WORK</a>
             <a href="./Extra.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">EXTRA</a>
             <a href="./About.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">ABOUT</a>
             <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="margin-top:4px; padding:13px 14px; border-radius:6px; border:1px solid rgba(0,0,0,0.35); font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a; text-align:center;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
@@ -122,10 +122,11 @@
         <button onClick="{{ prevNewsletter }}" style="position:absolute; left:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#fff; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:16px;">&larr;</button>
         <button onClick="{{ nextNewsletter }}" style="position:absolute; right:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#fff; color:#1a1a1a; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:16px;">&rarr;</button>
       </div>
-      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; margin-top:16px;">
         <sc-for list="{{ newsletters }}" as="n" hint-placeholder-count="2">
-          <button onClick="{{ n.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ n.dotColor }}; cursor:pointer;"></button>
+          <button onClick="{{ n.select }}" style="width:9px; height:9px; border-radius:50%; border:none; padding:0; background:{{ n.dotColor }}; cursor:pointer;"></button>
         </sc-for>
+        <span style="margin-left:4px; font-size:10px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">{{ newsletterCounter }}</span>
       </div>
     </section>
 
@@ -154,10 +155,11 @@
         <button onClick="{{ prevCoverCrop }}" style="position:absolute; left:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&larr;</button>
         <button onClick="{{ nextCoverCrop }}" style="position:absolute; right:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&rarr;</button>
       </div>
-      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; margin-top:16px;">
         <sc-for list="{{ coverCrops }}" as="c" hint-placeholder-count="3">
-          <button onClick="{{ c.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ c.dotColor }}; cursor:pointer;"></button>
+          <button onClick="{{ c.select }}" style="width:9px; height:9px; border-radius:50%; border:none; padding:0; background:{{ c.dotColor }}; cursor:pointer;"></button>
         </sc-for>
+        <span style="margin-left:4px; font-size:10px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">{{ coverCounter }}</span>
       </div>
     </section>
 
@@ -177,10 +179,11 @@
         <button onClick="{{ prevFactsheet }}" style="position:absolute; left:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&larr;</button>
         <button onClick="{{ nextFactsheet }}" style="position:absolute; right:2px; top:50%; transform:translateY(-50%); width:32px; height:32px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:#ffffff; color:#111111; font-size:14px; cursor:pointer; z-index:2; box-shadow:0 2px 8px rgba(0,0,0,0.08);">&rarr;</button>
       </div>
-      <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;">
+      <div style="display:flex; justify-content:center; align-items:center; gap:10px; margin-top:16px;">
         <sc-for list="{{ factsheets }}" as="f" hint-placeholder-count="3">
-          <button onClick="{{ f.select }}" style="width:8px; height:8px; border-radius:50%; border:none; padding:0; background:{{ f.dotColor }}; cursor:pointer;"></button>
+          <button onClick="{{ f.select }}" style="width:9px; height:9px; border-radius:50%; border:none; padding:0; background:{{ f.dotColor }}; cursor:pointer;"></button>
         </sc-for>
+        <span style="margin-left:4px; font-size:10px; font-weight:600; letter-spacing:0.06em; color:#8a8a8a;">{{ factCounter }}</span>
       </div>
     </section>
 
@@ -240,12 +243,14 @@ class Component extends DCLogic {
         if (label) { label.textContent = custom; label.style.opacity = '1'; }
         dot.style.width = ((label ? label.scrollWidth : 116) + 24) + 'px';
         dot.style.height = '30px';
+        dot.style.opacity = '1';
         dot.style.borderRadius = '6px';
       } else if (!over && this._openEl) {
         this._openEl = null;
         if (label) label.style.opacity = '0';
         dot.style.width = '12px';
         dot.style.height = '12px';
+        dot.style.opacity = '0';
         dot.style.borderRadius = '999px';
       }
     };
@@ -309,6 +314,7 @@ class Component extends DCLogic {
         dotColor: i === idx ? "#1a1a1a" : "rgba(0,0,0,0.2)",
         select: () => this.setState({ coverIndex: i })
       })),
+      coverCounter: (idx + 1) + " / " + coverCropsData.length,
       activeCoverCropA: coverCropsData[idx],
       activeCoverCropB: coverCropsData[(idx + 1) % coverCropsData.length],
       activeCoverCropC: coverCropsData[(idx + 2) % coverCropsData.length],
@@ -319,6 +325,7 @@ class Component extends DCLogic {
         dotColor: i === fIdx ? "#1a1a1a" : "rgba(0,0,0,0.2)",
         select: () => this.setState({ factIndex: i })
       })),
+      factCounter: (fIdx + 1) + " / " + factsheetsData.length,
       activeFactsheetA: factsheetsData[fIdx],
       activeFactsheetB: factsheetsData[(fIdx + 1) % factsheetsData.length],
       activeFactsheetC: factsheetsData[(fIdx + 2) % factsheetsData.length],
@@ -330,6 +337,7 @@ class Component extends DCLogic {
         select: () => this.setState({ newsletterIndex: i })
       })),
       activeNewsletter: newslettersData[nIdx],
+      newsletterCounter: (nIdx + 1) + " / " + newslettersData.length,
       prevNewsletter: () => this.setState(s => ({ newsletterIndex: (s.newsletterIndex - 1 + newslettersData.length) % newslettersData.length })),
       nextNewsletter: () => this.setState(s => ({ newsletterIndex: (s.newsletterIndex + 1) % newslettersData.length }))
     };
