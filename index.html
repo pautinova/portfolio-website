@@ -10,6 +10,7 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&amp;display=swap" rel="stylesheet">
   <style>
     @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: normal; }
     @font-face { font-family: 'Noto Serif'; src: url('./fonts/NotoSerif-Italic-Variable.ttf') format('truetype-variations'); font-weight: 100 900; font-style: italic; }
@@ -29,13 +30,33 @@
 
   <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1);">
     <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
-    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
-      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
-      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
-      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
-      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
-      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
-    </div>
+    <sc-if value="{{ navDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+        <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+        <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+        <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+        <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ navMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;">
+        <button onClick="{{ toggleNav }}" aria-label="Menu" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; width:44px; height:44px; padding:0; background:#ffffff; border:1px solid rgba(0,0,0,0.2); border-radius:8px; cursor:pointer;">
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+        </button>
+        <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:52px; right:0; z-index:30; min-width:190px; display:flex; flex-direction:column; gap:2px; padding:8px; background:#ffffff; border:1px solid rgba(0,0,0,0.12); border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.12);">
+            <a href="./Portfolio.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">HOME</a>
+            <a href="./Work.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">WORK</a>
+            <a href="./Extra.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">EXTRA</a>
+            <a href="./About.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">ABOUT</a>
+            <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="margin-top:4px; padding:13px 14px; border-radius:6px; border:1px solid rgba(0,0,0,0.35); font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a; text-align:center;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
   </nav>
 
   <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 20px;">
@@ -46,15 +67,15 @@
       <span style="color: inherit">[teen-eye]</span>
       <span style="color: inherit; font-weight: 200"><span style="font-style: normal; font-weight: 300">is a</span></span>
       <span style="color:inherit;">marketing generalist</span>
-      <span style="color:#8a8a8a;"><span style="font-style: normal;">❇</span></span>
+      <span style="color:#8a8a8a;"><span style="font-style:normal; font-family:'Noto Sans Symbols 2','Noto Sans',sans-serif;">❇</span></span>
       <span style="color: inherit; font-weight: 100"><span style="font-style: normal; font-weight: 300; color: inherit">she crafts the copy</span></span>
-      <span style="color: #8a8a8a; font-style: normal">✧</span>
+      <span style="color:#8a8a8a; font-style:normal; font-family:'Noto Sans Symbols 2','Noto Sans',sans-serif;">✧</span>
       <span style="color:inherit;"><span style="font-style: normal;">designs the asset</span></span>
-      <span style="color:#8a8a8a;"><span style="font-style: normal;">✴</span></span>
+      <span style="color:#8a8a8a;"><span style="font-style:normal; font-family:'Noto Sans Symbols 2','Noto Sans',sans-serif;">✴</span></span>
       <span style="color:inherit;"><span style="font-style: normal; color: inherit">runs the campaign</span></span>
-      <span style="color: #8a8a8a; font-style: normal">❋</span>
+      <span style="color:#8a8a8a; font-style:normal; font-family:'Noto Sans Symbols 2','Noto Sans',sans-serif;">❋</span>
       <span style="color:inherit;"><span style="font-style: normal;">measures what worked</span></span>
-      <span style="color:#8a8a8a;"><span style="font-style: normal;">✽</span></span>
+      <span style="color:#8a8a8a;"><span style="font-style:normal; font-family:'Noto Sans Symbols 2','Noto Sans',sans-serif;">✽</span></span>
     </h1><div style="margin-top:36px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.15); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
       <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; color:#6b6b6b;">CURRENTLY LOOKING FOR MY NEXT OPPORTUNITY</span>
       <a href="#work" style="font-size:10px; font-weight:600; letter-spacing:0.08em; color:#1a1a1a;">FEATURED WORK ↓</a>
@@ -65,7 +86,7 @@
 
     <section style="background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: clamp(20.6px,3.1vw,33px) clamp(28px,4.2vw,44px) clamp(20.6px,3.1vw,33px) clamp(20.6px,3.1vw,33px); display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; padding-bottom: clamp(20.6px,3.1vw,33px); transition:border-color 0.2s ease; will-change:border-color; transform:translateZ(0); position:relative" style-hover="border-color:rgba(0,0,0,0.4);">
       <a href="./BC-Ministry.dc.html" data-cursor-cta="1" aria-label="View project" style="position:absolute; inset:0; z-index:3; border-radius:16px;"></a>
-      <div style="flex:1 1 220px; max-width:280px; min-width:min(100%,220px);">
+      <div style="flex:1 1 220px; max-width:{{ cardTextMax }}; min-width:min(100%,220px);">
         <h2 style="margin: 0 0 10px; font-family: 'Noto Serif',serif; font-weight: 300; font-size: 22px; color: #111111; line-height: 1.25"><a href="./BC-Ministry.dc.html" style="color:inherit;">BC Ministry of Agriculture</a></h2>
         <p style="margin:0; font-size:13px; line-height:1.5; color:#6b6b6b; min-height:4.35em;">A complete overview of the communications projects I led and supported during my eight-month co-op.</p>
         <div style="margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.12)">
@@ -73,7 +94,7 @@
         </div>
       </div>
       <div style="flex:0 1 50%; max-width:50%; min-width:min(100%,320px); box-sizing:border-box; display:flex; align-items:stretch; overflow:hidden; border-radius:10px;">
-        <div style="width:100%; aspect-ratio:4/1; border-radius:10px; overflow:hidden; box-sizing:border-box;">
+        <div style="width:100%; aspect-ratio:{{ cardRatio }}; border-radius:10px; overflow:hidden; box-sizing:border-box;">
           <img src="./previews/bc-ministry-preview.png" alt="BC Ministry of Agriculture preview " style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
       </div>
@@ -82,7 +103,7 @@
     <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
       <section style="background:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:16px; padding:clamp(20.6px,3.1vw,33px) clamp(28px,4.2vw,44px) clamp(20.6px,3.1vw,33px) clamp(20.6px,3.1vw,33px); display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; padding-bottom: clamp(20.6px,3.1vw,33px); transition:border-color 0.2s ease; will-change:border-color; transform:translateZ(0); position:relative" style-hover="border-color:rgba(0,0,0,0.4);">
       <a href="{{ p.href }}" data-cursor-cta="1" data-cursor-label="{{ p.cursorLabel }}" aria-label="View project" style="position:absolute; inset:0; z-index:3; border-radius:16px;"></a>
-        <div style="flex:1 1 220px; max-width:280px; min-width:min(100%,220px);">
+        <div style="flex:1 1 220px; max-width:{{ cardTextMax }}; min-width:min(100%,220px);">
           <h2 style="margin: 0 0 10px; font-family: 'Noto Serif',serif; font-weight: 300; font-size: 22px; color: #111111; line-height: 1.25"><a href="{{ p.href }}" style="color:inherit;">{{ p.title }}</a></h2>
           <p style="margin:0; font-size:13px; line-height:1.5; color:#6b6b6b; min-height:4.35em;">{{ p.desc }}</p>
           <div style="margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.12)">
@@ -90,7 +111,7 @@
           </div>
         </div>
         <div style="flex:0 1 50%; max-width:50%; min-width:min(100%,320px); box-sizing:border-box; display:flex; align-items:stretch; overflow:hidden; border-radius:10px;">
-          <div style="width:100%; aspect-ratio:4/1; border-radius:10px; overflow:hidden; box-sizing:border-box; position:relative; background:linear-gradient(160deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));">
+          <div style="width:100%; aspect-ratio:{{ cardRatio }}; border-radius:10px; overflow:hidden; box-sizing:border-box; position:relative; background:linear-gradient(160deg, rgba(0,0,0,0.06), rgba(0,0,0,0.03));">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7" ref="{{ p.imgRef }}" alt="{{ p.title }} preview" style="width:100%; height:100%; object-fit:cover; display:block;">
             <sc-if value="{{ p.noSrc }}" hint-placeholder-val="{{ true }}">
               <span style="position:absolute; left:10px; bottom:10px; font-size:8px; font-family:monospace; letter-spacing:0.04em; color:rgba(0,0,0,0.35); text-transform:uppercase;">preview</span>
@@ -133,7 +154,14 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1300}}">class Component extends DCLogic {
+  state = {};
   componentDidMount() {
+    this._syncNav = () => {
+      const m = window.innerWidth < 700;
+      if (m !== this.state.navMobile) this.setState({ navMobile: m, navOpen: false });
+    };
+    window.addEventListener('resize', this._syncNav);
+    this._syncNav();
     if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
     this._move = (e) => {
       const dot = this._dot, label = this._label;
@@ -162,6 +190,7 @@
     window.addEventListener('mousemove', this._move);
   }
   componentWillUnmount() {
+    if (this._syncNav) window.removeEventListener('resize', this._syncNav);
     if (this._move) window.removeEventListener('mousemove', this._move);
   }
 
@@ -172,7 +201,14 @@
       { title: "SFU Surge", meta: "VISUAL DESIGN \u00b7 CLUB \u00b7 2025", href: "./SFU-Surge.dc.html", imgSrc: "./sfu-surge-preview.png", desc: "Everything I designed as Visual Design Coordinator at SFU's largest tech club." },
       { title: "Marin French", meta: "SOCIAL MEDIA \u00b7 PERSONAL PROJECT \u00b7 2026", href: "./Marin-French.dc.html", imgSrc: "./previews/marin-french-preview.png", desc: "Social content and creative direction for a Gen Z French tutor." }
     ];
+    const navMobile = this.state.navMobile ?? (typeof window !== 'undefined' && window.innerWidth < 700);
     return {
+      navMobile: !!navMobile,
+      cardTextMax: navMobile ? "100%" : "280px",
+      cardRatio: navMobile ? "16/9" : "4/1",
+      navDesktop: !navMobile,
+      navOpen: !!this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       cursorRef: (el) => { this._dot = el; },
       cursorLabelRef: (el) => { this._label = el; },
       projects: projectsData.map(p => ({

@@ -30,13 +30,33 @@
 
   <nav style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(20px,4vw,48px); border-bottom:1px solid rgba(0,0,0,0.1); position:relative; z-index:1;">
     <a href="./Portfolio.dc.html" style="font-size:13px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;">TINAY YERNAZAROVA</a>
-    <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
-      <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
-      <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
-      <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
-      <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
-      <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
-    </div>
+    <sc-if value="{{ navDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; align-items:center; gap:clamp(18px,3vw,32px); flex-wrap:wrap;">
+        <a href="./Portfolio.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">HOME</a>
+        <a href="./Work.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">WORK</a>
+        <a href="./Extra.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">EXTRA</a>
+        <a href="./About.dc.html" style="font-size:12px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b;" style-hover="color:#111111;">ABOUT</a>
+        <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="font-size:11px; font-weight:600; letter-spacing:0.06em; color:#6b6b6b; border:1px solid rgba(0,0,0,0.35); padding:8px 16px; border-radius:6px;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ navMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;">
+        <button onClick="{{ toggleNav }}" aria-label="Menu" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; width:44px; height:44px; padding:0; background:#ffffff; border:1px solid rgba(0,0,0,0.2); border-radius:8px; cursor:pointer;">
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+          <span style="display:block; width:16px; height:1.5px; background:#3a3a3a;"></span>
+        </button>
+        <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute; top:52px; right:0; z-index:30; min-width:190px; display:flex; flex-direction:column; gap:2px; padding:8px; background:#ffffff; border:1px solid rgba(0,0,0,0.12); border-radius:10px; box-shadow:0 12px 32px rgba(0,0,0,0.12);">
+            <a href="./Portfolio.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">HOME</a>
+            <a href="./Work.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">WORK</a>
+            <a href="./Extra.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">EXTRA</a>
+            <a href="./About.dc.html" style="padding:13px 14px; border-radius:6px; font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a;" style-hover="background:rgba(0,0,0,0.05);">ABOUT</a>
+            <a href="https://drive.google.com/file/d/1j8zz_I75VMI7psE7RvNCzcFFe0164exo/view?usp=sharing" target="_blank" rel="noopener" style="margin-top:4px; padding:13px 14px; border-radius:6px; border:1px solid rgba(0,0,0,0.35); font-size:12px; font-weight:600; letter-spacing:0.06em; color:#3a3a3a; text-align:center;" style-hover="background:#3a3a3a; color:#ffffff; border-color:#3a3a3a;">RESUME</a>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
   </nav>
 
   <header style="max-width:900px; margin:0 auto; padding:clamp(40px,7vw,70px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
@@ -128,6 +148,12 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount() {
+    this._syncNav = () => {
+      const m = window.innerWidth < 700;
+      if (m !== this.state.navMobile) this.setState({ navMobile: m, navOpen: false });
+    };
+    window.addEventListener('resize', this._syncNav);
+    this._syncNav();
     if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
     this._move = (e) => {
       const dot = this._dot, label = this._label;
@@ -153,6 +179,7 @@ class Component extends DCLogic {
     window.addEventListener('mousemove', this._move);
   }
   componentWillUnmount() {
+    if (this._syncNav) window.removeEventListener('resize', this._syncNav);
     if (this._move) window.removeEventListener('mousemove', this._move);
   }
 
@@ -163,7 +190,12 @@ class Component extends DCLogic {
       { id: "knitpetal-screen-1", placeholder: "Drop a screenshot", title: "KnitPetal" }
     ];
     const idx = this.state.screenIndex;
+    const navMobile = this.state.navMobile ?? (typeof window !== 'undefined' && window.innerWidth < 700);
     return {
+      navMobile: !!navMobile,
+      navDesktop: !navMobile,
+      navOpen: !!this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       cursorRef: (el) => { this._dot = el; },
       cursorLabelRef: (el) => { this._label = el; },
       screenIndex: idx,
