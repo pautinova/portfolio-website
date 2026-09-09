@@ -79,9 +79,9 @@
   <main style="max-width:900px; margin:0 auto; padding:clamp(60px,9vw,90px) clamp(20px,4vw,48px) 0; position:relative; z-index:1;">
     <section style="margin-bottom:clamp(50px,8vw,80px);">
       <h2 style="margin:0 0 24px; font-family:'Noto Serif',serif; font-weight:500; font-size:24px; color:#111111;">Instagram posts (swipe through!)</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,260px), 1fr)); gap:24px;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px;">
         <sc-for list="{{ posts }}" as="post" hint-placeholder-count="2">
-          <div style="border:1px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden; background:#ffffff; grid-column:{{ post.gridColumn }}; width:{{ post.cardMaxWidth }}; max-width:100%; margin:0 auto;">
+          <div style="border:1px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden; background:#ffffff; box-sizing:border-box; flex:0 1 {{ post.cardBasis }}; min-width:min(100%,250px); max-width:100%;">
             <div style="display:flex; align-items:center; gap:10px; padding:12px 14px;">
               <img src="./marin-avatar.jpeg" alt="marinfrench profile" style="width:32px; height:32px; border-radius:50%; object-fit:cover; flex-shrink:0; display:block;">
               <span style="font-size:13px; font-weight:600; color:#111111;">marinfrench</span>
@@ -91,7 +91,7 @@
               <div style="display:flex; transition:transform 0.35s ease; transform:translateX({{ post.offset }});">
                 <sc-for list="{{ post.slides }}" as="slide" hint-placeholder-count="3">
                   <div style="flex:0 0 100%; min-width:100%;">
-                    <img src="{{ slide.src }}" alt="" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;">
+                    <img src="{{ slide.src }}" alt="" loading="lazy" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;">
                   </div>
                 </sc-for>
               </div>
@@ -197,7 +197,7 @@ class Component extends DCLogic {
       { key: "welcome-b", count: 4 },
       { key: "welcome-c", count: 5 },
       { key: "welcome-d", count: 4 },
-      { key: "welcome-e", count: 4, centered: true }
+      { key: "welcome-e", count: 4 }
     ];
     const posts = postDefs.map((def, p) => {
       const idx = this.state.postIndex[p] || 0;
@@ -218,9 +218,8 @@ class Component extends DCLogic {
       return {
         slides,
         dots,
-        gridColumn: def.centered ? "1 / -1" : "auto",
-        cardMaxWidth: def.centered ? "min(100%, 394px)" : "100%",
         offset: (-idx * 100) + "%",
+        cardBasis: "calc((100% - 52px) / 3)",
         counter: (idx + 1) + "/" + def.count,
         prev: () => this.setPost(p, (idx - 1 + def.count) % def.count),
         next: () => this.setPost(p, (idx + 1) % def.count)
